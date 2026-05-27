@@ -33,7 +33,7 @@
 
 | Command                    | Description                                     |
 |----------------------------|-------------------------------------------------|
-| `ignore list`              | List all IgnorePkg entries                      |
+| `ignore list`              | List all IgnorePkg packages                     |
 | `ignore add <packages>`    | Add one or more packages to IgnorePkg list      |
 | `ignore remove <packages>` | Remove one or more packages from IgnorePkg list |
 
@@ -554,14 +554,14 @@ Manage IgnorePkg entries in pacman.conf
 
 **Subcommands:**
 
-- `shelly ignore list` — List all IgnorePkg entries
+- `shelly ignore list` — List all IgnorePkg packages
 - `shelly ignore add` — Add one or more packages to IgnorePkg list
 - `shelly ignore remove` — Remove one or more packages from IgnorePkg list
 
 
 ### `shelly ignore list`
 
-List all IgnorePkg entries
+List all IgnorePkg packages
 
 **Options:**
 
