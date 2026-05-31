@@ -11,7 +11,8 @@ using System.Text;
 using System.Xml.Linq;
 
 const string shellyBin = "shelly";
-const string outputFile = "wiki/cli_help.md";
+var cwd = Directory.GetCurrentDirectory();
+var outputFile = Path.Combine(cwd, "wiki", "cli_help.md");
 
 var xml = RunXmlDoc();
 var doc = XDocument.Parse(xml);
