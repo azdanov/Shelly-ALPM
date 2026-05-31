@@ -65,7 +65,7 @@ jobs:
         run: dotnet publish Shelly-CLI/Shelly-CLI.csproj -c Release -o publish/shelly-cli --no-restore --nologo -p:InstructionSet=x86-64
 
       - name: Generate CLI help docs
-        run: PATH="$GITHUB_WORKSPACE/publish/shelly-cli:$PATH" dotnet run help_compiler.cs
+        run: PATH="$GITHUB_WORKSPACE/publish/shelly-cli:$PATH" dotnet run --file help_compiler.cs
 
       # https://github.com/actions/checkout#push-a-commit-using-the-built-in-token
       - name: Commit CLI help docs
