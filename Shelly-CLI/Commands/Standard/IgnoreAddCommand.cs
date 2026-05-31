@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using PackageManager.Alpm;
+using Shelly_CLI.Utility;
 using Spectre.Console;
 using Spectre.Console.Cli;
 
@@ -19,7 +20,7 @@ public class IgnoreAddCommand : Command<IgnoreAddSettings>
         if (settings.Packages.Length == 0)
         {
             if (Program.IsUiMode)
-                Console.Error.WriteLine("Error: No packages specified");
+                UiFrames.Error("No packages specified");
             else
                 AnsiConsole.MarkupLine("[red]Error: No packages specified[/]");
 
@@ -36,7 +37,7 @@ public class IgnoreAddCommand : Command<IgnoreAddSettings>
 
             var formattedPackages = string.Join(", ", settings.Packages);
             if (Program.IsUiMode)
-                Console.Error.WriteLine($"Added to IgnorePkg list: {formattedPackages} ");
+                UiFrames.Info($"Added to IgnorePkg list: {formattedPackages}");
             else
                 AnsiConsole.MarkupLine(
                     $"Added to IgnorePkg list: [green]{formattedPackages.EscapeMarkup()}[/]");
@@ -46,7 +47,7 @@ public class IgnoreAddCommand : Command<IgnoreAddSettings>
         catch (Exception e)
         {
             if (Program.IsUiMode)
-                Console.Error.WriteLine($"Error: {e.Message}");
+                UiFrames.Error($"Failed to add to IgnorePkg list: {e.Message}");
             else
                 AnsiConsole.MarkupLine($"[red]Error: {e.Message.EscapeMarkup()}[/]");
 
